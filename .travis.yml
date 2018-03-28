@@ -1,4 +1,5 @@
 language: php
+install: true
 
 php:
     - 5.4
