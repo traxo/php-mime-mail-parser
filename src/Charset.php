@@ -319,6 +319,7 @@ class Charset implements CharsetManager
             return $encodedString;
         }
         elseif (function_exists('mb_convert_encoding')){
+            mb_substitute_character("none");
             return mb_convert_encoding($encodedString, 'UTF-8', $this->getCharsetAlias($charset));
         } else {
             return iconv($this->getCharsetAlias($charset), 'UTF-8//TRANSLIT//IGNORE', $encodedString);
